@@ -3,7 +3,7 @@ import def.colors;
 import def.asc;
 import def.Clear;
 
-import math.*; 
+import math.Normal.*;
 
 import java.awt.Color;
 
@@ -51,13 +51,13 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    messages = ResourceBundle.getBundle("lang.BR", new Locale("pt", "BR"));
+                    messages = ResourceBundle.getBundle("lang.BR", Locale.forLanguageTag("pt-BR"));
                     break;
                 case 2:
-                    messages = ResourceBundle.getBundle("lang.EN", new Locale("en", "US"));
+                    messages = ResourceBundle.getBundle("lang.EN", Locale.forLanguageTag("en-US"));
                     break;
                 case 3:
-                    messages = ResourceBundle.getBundle("lang.ES", new Locale("", "ES"));
+                    messages = ResourceBundle.getBundle("lang.ES", Locale.forLanguageTag("es-ES"));
                     break;
                 default:
                     System.out.println(colors.RED
@@ -73,30 +73,31 @@ public class Main {
         scanner.nextLine();
         Clear.clear();
 
-        while(true){
-        System.out.println(colors.GREEN + messages.getString("what_you_want"));
-        System.out.println(colors.CYAN + messages.getString("options"));
+        while (true) {
+            System.out.println(colors.GREEN + messages.getString("what_you_want"));
+            System.out.println(colors.CYAN + messages.getString("options"));
+            
 
-        int choice;
-        if (!scanner.hasNextInt()) {
-            System.out.println(colors.RED + messages.getString("invalid") + colors.RESET);
+            int choice;
+            if (!scanner.hasNextInt()) {
+                System.out.println(colors.RED + messages.getString("invalid") + colors.RESET);
+                scanner.nextLine();
+                Clear.clear();
+                continue;
+            }
+
+            choice = scanner.nextInt();
             scanner.nextLine();
-            Clear.clear();
-            continue;
-        }
 
-        choice = scanner.nextInt();
-        scanner.nextLine();
+            switch (choice) {
+                case 1:
+                    break;
 
-        switch (choice) {
-            case 1:
-                Normal.normal();
-                break;
-        
-            default:
-                break;
+                default:
+                    break;
+            }
+
         }
 
     }
-
-}}
+}
