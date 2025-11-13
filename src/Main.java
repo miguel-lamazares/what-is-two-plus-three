@@ -1,13 +1,12 @@
 
 import def.colors;
-import def.justNumeber;
+import def.justNumber;
 import math.Normal.normal;
 import def.asc;
 import def.Clear;
-import def.justNumeber;
 import def.lang;
 
-import java.awt.Color;
+
 
 // imports here for packages
 
@@ -38,7 +37,7 @@ public class Main {
                     + colors.YELLOW + "3 - Español (España)\n" + colors.RED + "4 - 日本語 (日本)" + colors.RESET + "\n");
 
             int choice;        
-            choice = justNumeber.readInt(scanner, 4);
+            choice = justNumber.readInt(scanner, 4);
             
 
             switch (choice) {
@@ -71,7 +70,7 @@ public class Main {
         System.out.println(colors.GREEN + lang.messages.getString("what_you_want") + colors.RESET);
         System.out.println(colors.CYAN + lang.messages.getString("options") + colors.RESET);
         
-        int choice = justNumeber.readInt(scanner, 3);
+        int choice = justNumber.readInt(scanner, 3);
         
 
         switch (choice) {

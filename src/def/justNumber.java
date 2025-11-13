@@ -1,6 +1,6 @@
 package def;
 
-public class justNumeber {
+public class justNumber {
     public static int readInt(java.util.Scanner scanner, int maxvalue) {
         int choice;
         while (true) {
