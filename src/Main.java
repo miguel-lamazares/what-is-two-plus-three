@@ -1,10 +1,10 @@
 
-import def.colors;
-import def.justNumber;
-import math.Normal.normal;
-import def.asc;
+import def.Colors;
+import def.JustNumber;
+import math.Normal.SimpleMath;
+import def.Asc;
 import def.Clear;
-import def.lang;
+import def.Lang;
 
 
 
@@ -20,11 +20,11 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println(colors.GREEN + asc.ASCII_ART + colors.RESET);
+        System.out.println(Colors.GREEN + Asc.ASCII_ART + Colors.RESET);
         System.out.println(
-                colors.BLUE
+                Colors.BLUE
                         + "\n\n\nPresione Enter para continuar... Press Enter to continue... Pressione Enter para continuar... 続行するには Enter キーを押してください。..."
-                        + colors.RESET);
+                        + Colors.RESET);
         scanner.nextLine();
         Clear.clear();
 
@@ -32,50 +32,50 @@ public class Main {
         while (true) {
 
             System.out.println(
-                    colors.PURPLE + "Selecione um idioma / Set a languege / seleccione un idioma\n" + colors.RESET);
-            System.out.println(colors.GREEN + "1 - Português (Brasil)\n" + colors.BLUE + "2 - English (United States)\n"
-                    + colors.YELLOW + "3 - Español (España)\n" + colors.RED + "4 - 日本語 (日本)" + colors.RESET + "\n");
+                    Colors.PURPLE + "Selecione um idioma / Set a languege / seleccione un idioma\n" + Colors.RESET);
+            System.out.println(Colors.GREEN + "1 - Português (Brasil)\n" + Colors.BLUE + "2 - English (United States)\n"
+                    + Colors.YELLOW + "3 - Español (España)\n" + Colors.RED + "4 - 日本語 (日本)" + Colors.RESET + "\n");
 
             int choice;        
-            choice = justNumber.readInt(scanner, 4);
+            choice = JustNumber.readInt(scanner, 4);
             
 
             switch (choice) {
                 case 1:
-                    lang.messages = ResourceBundle.getBundle("lang.BR", Locale.forLanguageTag("pt-BR"));
+                    Lang.messages = ResourceBundle.getBundle("lang.BR", Locale.forLanguageTag("pt-BR"));
                     break;
                 case 2:
-                    lang.messages = ResourceBundle.getBundle("lang.EN", Locale.forLanguageTag("en-US"));
+                    Lang.messages = ResourceBundle.getBundle("lang.EN", Locale.forLanguageTag("en-US"));
                     break;
                 case 3:
-                    lang.messages = ResourceBundle.getBundle("lang.ES", Locale.forLanguageTag("es-ES"));
+                    Lang.messages = ResourceBundle.getBundle("lang.ES", Locale.forLanguageTag("es-ES"));
                     break;
                 case 4:
-                    lang.messages = ResourceBundle.getBundle("lang.JP", Locale.forLanguageTag("ja-JP"));
+                    Lang.messages = ResourceBundle.getBundle("lang.JP", Locale.forLanguageTag("ja-JP"));
                     break;
                 default:
-                    System.out.println(colors.RED
+                    System.out.println(Colors.RED
                             + "Opção inválida. Tente novamente.\nInvalid option. Try again.\nOpción inválida. Inténtalo de nuevo.\n無効なオプションです。もう一度お試しください。"
-                            + colors.RESET);
+                            + Colors.RESET);
                     Clear.clear();
                     continue;
             }
             break;
         }
 
-        System.out.println(lang.messages.getString("enter"));
+        System.out.println(Lang.messages.getString("enter"));
         scanner.nextLine();
         Clear.clear();
 
-        System.out.println(colors.GREEN + lang.messages.getString("what_you_want") + colors.RESET);
-        System.out.println(colors.CYAN + lang.messages.getString("options") + colors.RESET);
+        System.out.println(Colors.GREEN + Lang.messages.getString("what_you_want") + Colors.RESET);
+        System.out.println(Colors.CYAN + Lang.messages.getString("options") + Colors.RESET);
         
-        int choice = justNumber.readInt(scanner, 3);
+        int choice = JustNumber.readInt(scanner, 3);
         
 
         switch (choice) {
             case 1:
-                normal.Normal();
+                SimpleMath.Normal();
                 break;
 
             default:

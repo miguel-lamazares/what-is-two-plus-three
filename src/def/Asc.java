@@ -1,6 +1,6 @@
 package def;
 
-public class asc {
+public class Asc {
     
     public static final String ASCII_ART = 
 "               .__                                  __                __                                    .__               .__          __                 \n" + //

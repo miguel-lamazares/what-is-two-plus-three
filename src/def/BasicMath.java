@@ -30,10 +30,10 @@ public class BasicMath {
 
         
         if (total > 0)
-            System.out.println(lang.messages.getString("result") + colors.GREEN + total + colors.RESET);
+            System.out.println(Lang.messages.getString("result") + Colors.GREEN + total + Colors.RESET);
         else if (total < 0)
-            System.out.println(lang.messages.getString("result") + colors.RED + total + colors.RESET);
+            System.out.println(Lang.messages.getString("result") + Colors.RED + total + Colors.RESET);
         else
-            System.out.println(lang.messages.getString("result") + total + colors.RESET);
+            System.out.println(Lang.messages.getString("result") + total + Colors.RESET);
     }
 }
