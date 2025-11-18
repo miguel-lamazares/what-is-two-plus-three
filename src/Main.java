@@ -1,12 +1,10 @@
 
-import def.Colors;
-import def.JustNumber;
 import math.Normal.SimpleMath;
-import def.Asc;
-import def.Clear;
-import def.Lang;
-
-
+import def.AscII.Asc;
+import def.AscII.Clear;
+import def.AscII.Colors;
+import def.AscII.JustNumber;
+import def.Locale.Lang;
 
 // imports here for packages
 
@@ -37,7 +35,7 @@ public class Main {
                     + Colors.YELLOW + "3 - Español (España)\n" + Colors.RED + "4 - 日本語 (日本)" + Colors.RESET + "\n");
 
             int choice;        
-            choice = JustNumber.readInt(scanner, 4);
+            choice = JustNumber.readInt(scanner, 5);
             
 
             switch (choice) {

@@ -1,10 +1,11 @@
 package math.Normal;
 
-import def.Clear;
-import def.Colors;
-import def.JustNumber;
-import def.Lang;
-import def.BasicMath;
+import def.AscII.Clear;
+import def.AscII.Colors;
+import def.AscII.JustNumber;
+import def.Locale.Lang;
+import def.Math.BasicMath;
+import def.Math.JustCalc;
 
 import java.util.Scanner;
 
@@ -16,6 +17,7 @@ public class SimpleMath {
         Clear.clear();
 
         System.out.println(Colors.GREEN + Lang.messages.getString("selectN") + Colors.RESET);
+        System.out.println(Colors.CYAN + Lang.messages.getString("Noptions") + Colors.RESET);
 
         int choice = JustNumber.readInt(scanner, 6);
         switch (choice) {
@@ -37,16 +39,14 @@ public class SimpleMath {
                 Clear.clear();
                 System.out.println(Colors.BLUE + Lang.messages.getString("dv") + Colors.RESET);
                 System.out.println(Lang.messages.getString("dv1"));
-                double a, b, total;
                 while (true) {
                     try {
-                        a = scanner.nextDouble();
+                        double a = JustCalc.ReadCalc(scanner);
                         System.out.println(Lang.messages.getString("dv2"));
-                        b = scanner.nextDouble();
+                        double b = JustCalc.ReadCalc(scanner);
                         if (a != 0 && b == 0) {
                             Clear.clear();
                             System.out.println(Colors.BLUE + Lang.messages.getString("zeroerror") + Colors.RESET);
-                            System.out.println(Lang.messages.getString("enter"));
                             System.out.println(Lang.messages.getString("dv1"));
                             continue;
                         }
@@ -54,7 +54,7 @@ public class SimpleMath {
                             System.out.println(Lang.messages.getString("undefined"));
                         }
 
-                        total = a / b;
+                         double total = a / b;
                         if (total > 0)
                             System.out.println(Lang.messages.getString("result") + Colors.GREEN + total + Colors.RESET);
                         else if (total < 0)

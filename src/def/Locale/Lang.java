@@ -1,4 +1,4 @@
-package def;
+package def.Locale;
 import java.util.ResourceBundle;
 import java.util.Locale;
 

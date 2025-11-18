@@ -1,7 +1,7 @@
-package def;
+package def.Math;
 
-public class JustNumber {
-    public static int readInt(java.util.Scanner scanner, int maxvalue) {
+public class JustCalc {
+    public static int ReadCalc(java.util.Scanner scanner) {
         int choice;
         while (true) {
             if (!scanner.hasNextInt()) {
@@ -13,12 +13,6 @@ public class JustNumber {
             }
             choice = scanner.nextInt();
             scanner.nextLine();
-
-            if(choice >= maxvalue){
-                System.out.print("\033[1A");
-                System.out.print("\033[2K");
-                continue;
-            }
 
             return choice;
         }

@@ -1,4 +1,4 @@
-package def;
+package def.AscII;
 
 public class Clear {
     public static void clear() {

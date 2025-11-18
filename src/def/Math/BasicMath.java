@@ -1,5 +1,8 @@
 
-package def;
+package def.Math;
+
+import def.AscII.Colors;
+import def.Locale.Lang;
 
 public class BasicMath {
     public static void basic(java.util.Scanner scanner, String type) {
@@ -19,7 +22,6 @@ public class BasicMath {
                     case "+" -> total += valor;
                     case "-" -> total -= valor;
                     case "*" -> total *= valor;
-                    
                 }
             } catch (NumberFormatException e) {
                 
