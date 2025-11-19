@@ -65,7 +65,7 @@ public class Main {
         scanner.nextLine();
         Clear.clear();
 
-        System.out.println(Colors.GREEN + Lang.messages.getString("what_you_want") + Colors.RESET);
+        System.out.println(Colors.PURPLE + Lang.messages.getString("what_you_want") + Colors.RESET);
         System.out.println(Colors.CYAN + Lang.messages.getString("options") + Colors.RESET);
         
         int choice = JustNumber.readInt(scanner, 3);

@@ -4,6 +4,7 @@ import def.AscII.Clear;
 import def.AscII.Colors;
 import def.AscII.JustNumber;
 import def.Locale.Lang;
+import def.Math.Again;
 import def.Math.BasicMath;
 import def.Math.JustCalc;
 
@@ -16,7 +17,7 @@ public class SimpleMath {
 
         Clear.clear();
 
-        System.out.println(Colors.GREEN + Lang.messages.getString("selectN") + Colors.RESET);
+        System.out.println(Colors.PURPLE + Lang.messages.getString("selectN") + Colors.RESET);
         System.out.println(Colors.CYAN + Lang.messages.getString("Noptions") + Colors.RESET);
 
         int choice = JustNumber.readInt(scanner, 6);
@@ -27,12 +28,12 @@ public class SimpleMath {
                 BasicMath.basic(scanner, "+");
             case 2:
                 Clear.clear();
-                System.out.println(Colors.BLUE + Lang.messages.getString("sum") + Colors.RESET);
+                System.out.println(Colors.BLUE + Lang.messages.getString("men") + Colors.RESET);
                 BasicMath.basic(scanner, "-");
                 break;
             case 3:
                 Clear.clear();
-                System.out.println(Colors.BLUE + Lang.messages.getString("sum") + Colors.RESET);
+                System.out.println(Colors.BLUE + Lang.messages.getString("mul") + Colors.RESET);
                 BasicMath.basic(scanner, "*");
                 break;
             case 4:
@@ -46,21 +47,28 @@ public class SimpleMath {
                         double b = JustCalc.ReadCalc(scanner);
                         if (a != 0 && b == 0) {
                             Clear.clear();
-                            System.out.println(Colors.BLUE + Lang.messages.getString("zeroerror") + Colors.RESET);
+                            System.out.println(Colors.RED + Lang.messages.getString("zeroerror") + Colors.RESET);
                             System.out.println(Lang.messages.getString("dv1"));
                             continue;
                         }
                         if (a == 0 && b == 0) {
-                            System.out.println(Lang.messages.getString("undefined"));
+                            Clear.clear();
+                            System.out.println(Colors.RED + Lang.messages.getString("undefined") + Colors.RESET);
+                            System.out.println(Lang.messages.getString("dv1"));
+                            continue;
                         }
 
-                         double total = a / b;
-                        if (total > 0)
+                        double total = a / b;
+                        if (total > 0) {
                             System.out.println(Lang.messages.getString("result") + Colors.GREEN + total + Colors.RESET);
-                        else if (total < 0)
+                            Again.doItAgain();
+                        } else if (total < 0) {
                             System.out.println(Lang.messages.getString("result") + Colors.RED + total + Colors.RESET);
-                        else
+                            Again.doItAgain();
+                        } else {
                             System.out.println(Lang.messages.getString("result") + total + Colors.RESET);
+                            Again.doItAgain();
+                        }
                         break;
                     } catch (NumberFormatException e) {
 
