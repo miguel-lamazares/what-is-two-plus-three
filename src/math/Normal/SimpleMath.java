@@ -7,6 +7,7 @@ import def.Locale.Lang;
 import def.Math.Again;
 import def.Math.BasicMath;
 import def.Math.JustCalc;
+import def.Math.Again;
 
 import java.util.Scanner;
 
@@ -26,10 +27,12 @@ public class SimpleMath {
                 Clear.clear();
                 System.out.println(Colors.BLUE + Lang.messages.getString("sum") + Colors.RESET);
                 BasicMath.basic(scanner, "+");
+                Again.doItAgain();
             case 2:
                 Clear.clear();
                 System.out.println(Colors.BLUE + Lang.messages.getString("men") + Colors.RESET);
                 BasicMath.basic(scanner, "-");
+                Again.doItAgain();
                 break;
             case 3:
                 Clear.clear();
@@ -78,6 +81,7 @@ public class SimpleMath {
                     }
 
                 }
+                Again.doItAgain();
                 break;
             default:
                 System.out.println(Colors.RED + Lang.messages.getString("invalidOption") + Colors.RESET);

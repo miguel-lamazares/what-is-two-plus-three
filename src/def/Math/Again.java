@@ -5,13 +5,11 @@ import def.AscII.*;
 
 import java.util.Scanner;
 
-
-
 public class Again {
     public static void doItAgain() {
         System.out.println(Lang.messages.getString("enter"));
         Scanner scanner = new Scanner(System.in);
-        
+
         scanner.nextLine();
         Clear.clear();
 
@@ -23,7 +21,8 @@ public class Again {
 
         switch (choice) {
             case 1:
-                System.out.println("");
+                Clear.clear();
+                System.out.println(Colors.PURPLE + Lang.messages.getString("thanks"));
                 System.exit(0);
                 break;
             case 2:
@@ -33,10 +32,11 @@ public class Again {
                 Clear.clear();
                 break;
             case 4:
-                break;
+                return;
 
             default:
-                break;
+                System.exit(0);
+
         }
     }
 }

@@ -36,13 +36,10 @@ public class BasicMath {
 
         if (total > 0) {
             System.out.println(Lang.messages.getString("result") + Colors.GREEN + total + Colors.RESET);
-            Again.doItAgain();
         } else if (total < 0) {
             System.out.println(Lang.messages.getString("result") + Colors.RED + total + Colors.RESET);
-            Again.doItAgain();
         } else {
             System.out.println(Lang.messages.getString("result") + total + Colors.RESET);
-            Again.doItAgain();
         }
     }
 }
